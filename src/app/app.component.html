@@ -1,9 +1,48 @@
 
 <div>
-  <h1>
-  {{ title }}
-  </h1>
+
+  <header>
+    <div class=" bg-dark" id="navbarHeader">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 col-md-5 ml-auto py-4">
+            <h2 class="text-white">{{ title }}</h2>
+            <p class="text-muted">Add some information about the album below,
+              the author, or any other background context. Make it a few sentences long so
+              folks can pick up some informative tidbits. Then, link them off to some social
+               networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-6  py-4">
+            <div class="btn-group">
+              <a routerLink="/" class="btn btn-secondary btn-sm vertical" role="button">HOME</a>
+              <a routerLink="/news" class="btn btn-secondary btn-sm " role="button">NEWS AND <br> EVENTS</a>
+              <a routerLink="/sponsor" class="btn btn-secondary btn-sm vertical" role="button">SPONSOR</a>
+              <a routerLink="/donate" class="btn btn-secondary btn-sm " role="button">DONATE <br>NOW</a>
+              <a routerLink="/designer" class="btn btn-secondary btn-sm " role="button">DESIGNERS <br>PROFILE</a>
+              <a routerLink="/volunteer" class="btn btn-secondary btn-sm vertical" role="button">VOLUNTEER</a>
+              <a routerLink="/about" class="btn btn-secondary btn-sm vertical" role="button">ABOUT US</a>
+            </div>
+
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <nav>
+    <h1 class="display-inline-box">
+
+    </h1>
+
+
+  </nav>
 </div>
-
-
+<hr />
 <router-outlet></router-outlet>
