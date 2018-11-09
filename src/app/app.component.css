@@ -1,3 +1,26 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
 .vertical{
 padding-top:15px;
+}
+@media (max-width: 991px) {
+  .btn-group.my-btn-group-responsive > .btn {
+    display: block;
+    width: 100%;
+  }
+  .btn-group.my-btn-group-responsive > .btn:first-child {
+    border-radius: 6px 6px 0 0;
+  }
+
+  .btn-group.my-btn-group-responsive > .btn:first-child:(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 6px;
+  }
+
+  .btn-group.my-btn-group-responsive > .btn:last-child:not(:first-child) {
+    border-radius: 0 0 6px 6px;
+  }
+
+  .btn-group.my-btn-group-responsive .btn + .btn {
+    margin-left: 0;
+  }
+
 }

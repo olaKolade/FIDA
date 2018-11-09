@@ -7,6 +7,7 @@ import { SponsorComponent } from './sponsor/sponsor.component';
 import { DonateComponent } from './donate/donate.component';
 import { DesignerComponent } from './designer/designer.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
+import { SignupComponent } from './volunteer/signup/signup.component';
 import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'donate', component: DonateComponent },
   {path: 'designer', component: DesignerComponent },
   {path: 'volunteer', component: VolunteerComponent },
+  {path: 'volunteer/signup', component: SignupComponent },
   {path: 'about', component: AboutComponent }
 
 

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sponsor.component.css']
 })
 export class SponsorComponent implements OnInit {
-
+  page_title: string = 'SPONSORS';
   constructor() { }
 
   ngOnInit() {

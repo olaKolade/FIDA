@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./designer.component.css']
 })
 export class DesignerComponent implements OnInit {
-
+  page_title: string = 'DESIGNERS';
   constructor() { }
 
   ngOnInit() {

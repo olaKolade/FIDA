@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./donate.component.css']
 })
 export class DonateComponent implements OnInit {
-
+  page_title: string = 'DONATE';
   constructor() { }
 
   ngOnInit() {

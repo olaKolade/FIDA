@@ -10,6 +10,7 @@ import { DonateComponent } from './donate/donate.component';
 import { DesignerComponent } from './designer/designer.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { AboutComponent } from './about/about.component';
+import { SignupComponent } from './volunteer/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutComponent } from './about/about.component';
     DonateComponent,
     DesignerComponent,
     VolunteerComponent,
-    AboutComponent
+    AboutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
