@@ -1,17 +1,22 @@
 <div class="container">
   <div class="row">
-    <form class="form" action="index.html" method="post">
-      <label for="name">Name:</label>
-      <input type="text" name="name" value="name" /> <br />
-      <label for="profile_pic">Upload Your Profile Picture:</label>
-      <input type="file" name="profile_pic" value="profile_pic" /> <br />
-      <label for="age">Age:</label>
-      <input type="number" name="age" value="age" /> <br />
-      <label for="email">Email:</label>
-      <input type="email" email="email" value="email" /> <br />
-      <label for="about">About Me:</label>
-      <textarea name="about" rows="8" cols="50"></textarea>
-    </form>
+    <div class="col-md-8 offset-md-2">
+      <form class="form" action="index.html" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="name" /> <br />
+        <label for="profile_pic">Upload Your Profile Picture:</label>
+        <input type="file" name="profile_pic" value="profile_pic" /> <br />
+        <label for="age">Age:</label>
+        <input type="number" name="age" value="age" /> <br />
+        <label for="email">Email:</label>
+        <input type="email" email="email" value="email" /> <br />
+        <label for="about">About Me:</label>
+        <textarea name="about" rows="8" cols="50"></textarea> <br />
+        <label for="gallery">Gallery: <span class="small">(Max of 9)</span> </label>
+        <input type="file" name="gallery" value="gallery" /> <br /><br />
+        <button type="submit" name="submit" class="btn btn-lg btn-block btn-success"> Create my Account</button>
+      </form>
+    </div>
 
   </div>
 
