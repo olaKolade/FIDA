@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularRaveModule } from 'angular-rave';
+
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +29,9 @@ import { SignupComponent } from './volunteer/signup/signup.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularRaveModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
