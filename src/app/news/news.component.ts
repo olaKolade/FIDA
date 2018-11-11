@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
   page_title = 'NEWS AND EVENTS';
+  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
   constructor() {
   }
 

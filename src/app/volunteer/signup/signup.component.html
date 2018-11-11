@@ -5,7 +5,12 @@
         <label for="name">Name:</label>
         <input type="text" name="name" value="name" /> <br />
         <label for="profile_pic">Upload Your Profile Picture:</label>
-        <image-upload></image-upload>
+        <image-upload
+          [max]="1"
+          [buttonCaption] = "'Select Photo'"
+          [dropBoxMessage] = "''"
+          [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+        ></image-upload>
         <label for="age">Age:</label>
         <input type="number" name="age" value="age" /> <br />
         <label for="email">Email:</label>
@@ -13,7 +18,11 @@
         <label for="about">About Me:</label>
         <textarea name="about" rows="8" cols="50"></textarea> <br />
         <label for="gallery">Gallery: <span class="small">(Max of 9)</span> </label>
-        <input type="file" name="gallery" value="gallery" /> <br /><br />
+        <image-upload
+          [max]="9"
+          [dropBoxMessage] = "''"
+          [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+        ></image-upload> <br /><br />
         <button type="submit" name="submit" class="btn btn-lg btn-block btn-success"> Create my Account</button>
       </form>
     </div>

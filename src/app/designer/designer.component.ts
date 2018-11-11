@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignerComponent implements OnInit {
   page_title: string = 'DESIGNERS';
+  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
   constructor() { }
 
   ngOnInit() {
