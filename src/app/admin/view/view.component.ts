@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './../user';
+import { User } from './../../user';
 
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-import { UserService } from './../services/user.service';
+import { UserService } from './../../services/user.service';
 
 @Component({
-  selector: 'app-designer',
-  templateUrl: './designer.component.html',
-  styleUrls: ['./designer.component.css']
+  selector: 'app-view',
+  templateUrl: './view.component.html',
+  styleUrls: ['./view.component.css']
 })
-export class DesignerComponent implements OnInit {
-  page_title: string = 'DESIGNERS';
-  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
-
+export class ViewComponent implements OnInit{
   user= new User;
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +19,7 @@ export class DesignerComponent implements OnInit {
     private userService: UserService
   ){
   }
+
 
   ngOnInit(){
     this.showUser();
@@ -37,5 +35,18 @@ export class DesignerComponent implements OnInit {
         })
     }
 
+    delete(){
+      const id = +this.route.snapshot.paramMap.get('id');
+      console.log(id);
+      this.userService
+        .deleteUser({id: id})
+        .subscribe(response => {
+          if(response.success){
+            this.router.navigate(['/admin/index']);
+          }
+
+
+        })
+    }
 
 }

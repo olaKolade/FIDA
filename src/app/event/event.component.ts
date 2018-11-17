@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
   page_title: string = "EVENT";
+  public img_url:string = "kjl.png";
   constructor() { }
 
   ngOnInit() {

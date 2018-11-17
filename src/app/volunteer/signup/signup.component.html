@@ -1,30 +1,69 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form class="form" action="index.html" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="name" /> <br />
-        <label for="profile_pic">Upload Your Profile Picture:</label>
-        <image-upload
-          [max]="1"
-          [buttonCaption] = "'Select Photo'"
-          [dropBoxMessage] = "''"
-          [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
-        ></image-upload>
-        <label for="age">Age:</label>
-        <input type="number" name="age" value="age" /> <br />
-        <label for="email">Email:</label>
-        <input type="email" email="email" value="email" /> <br />
-        <label for="about">About Me:</label>
-        <textarea name="about" rows="8" cols="50"></textarea> <br />
-        <label for="gallery">Gallery: <span class="small">(Max of 9)</span> </label>
-        <image-upload
-          [max]="9"
-          [dropBoxMessage] = "''"
-          [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
-        ></image-upload> <br /><br />
-        <button type="submit" name="submit" class="btn btn-lg btn-block btn-success"> Create my Account</button>
+      <div>
+      <form class="form-horizontal" (ngSubmit)="onSubmit()" #signup="ngForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control"
+          [(ngModel)]="model.name" name="name" id="name" required #name="ngModel"/> <br />
+          {{name.className}}
+          <div *ngIf="!name.valid || !name.pristine"
+               class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="profile_pic">Upload Your Profile Picture:</label>
+          <image-upload
+            [max]="1"
+            [buttonCaption] = "'Select Photo'"
+            [dropBoxMessage] = "''"
+            [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+            required
+            name="profile_pic"
+          #profile_pic></image-upload>
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" class="form-control" name="age" id="age" [(ngModel)]="model.age" /> <br />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email"
+           name="email" class="form-control"
+          [(ngModel)]="model.email" id="email" required/> <br />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password"
+           name="password" class="form-control"
+          [(ngModel)]="model.password" id="password" required/> <br />
+        </div>
+        <div class="form-group">
+          <label for="about">About Me:</label>
+          <textarea name="about" class="form-control" rows="8" cols="50" [(ngModel)]="model.about" name="about" required></textarea> <br />
+        </div>
+        <div class="form-group">
+          <label for="gallery">Gallery: <span class="small">(Max of 9)</span> </label>
+          <image-upload
+            [max]="9"
+            [dropBoxMessage] = "''"
+            [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+
+          ></image-upload>
+          <br /><br />
+        </div>
+        <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!signup.form.valid"> Create my Account</button>
       </form>
+    </div>
+
+    <div *ngIf="submitted">
+      You submitted the following
+
+      {{diagnostic}}
+
+    </div>
     </div>
 
   </div>

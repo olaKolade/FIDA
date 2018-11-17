@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="row">
+        <form class="form" (ngSubmit)="onSubmit()" #edit="ngForm">
+          <div class="form-group">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control"
+            [(ngModel)]="user.name" name="name" id="name" required/> <br />
+          </div>
+          <div class="form-group">
+            <label for="profile_pic">Upload Your Profile Picture:</label>
+            <image-upload
+              [max]="1"
+              [buttonCaption] = "'Select Photo'"
+              [dropBoxMessage] = "''"
+              [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+            ></image-upload>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" name="age" id="age" [(ngModel)]="user.age" /> <br />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email"
+             name="email" class="form-control"
+            [(ngModel)]="user.email" id="email" required/> <br />
+          </div>
+          <div class="form-group">
+            <label for="about">About Me:</label>
+            <textarea name="about" class="form-control" rows="8" cols="50" [(ngModel)]="user.about" name="about" required></textarea> <br />
+          </div>
+          <div class="form-group">
+            <label for="gallery">Gallery: <span class="small">(Max of 9)</span> </label>
+            <image-upload
+              [max]="9"
+              [dropBoxMessage] = "''"
+              [extensions] = "['jpg', 'jpeg', 'gif', 'png']"
+
+            ></image-upload>
+            <br /><br />
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!edit.form.valid">Update Details</button>
+            </div>
+            <div class="col-md-6">
+              <a routerLink="/designer/{{user.id}}"  class="btn btn-lg btn-block btn-danger">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

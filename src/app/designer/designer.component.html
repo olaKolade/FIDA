@@ -1,40 +1,53 @@
 <div class="container">
   <h3 class="left">{{page_title}}</h3>
   <div class="row">
-    <div class="col-md-12">
-      <div class="mb-4 shadow-sm">
-        <p>Picture</p>
-        <img class="img" src="./../../assets/img/placeholders/pp.jpg" alt="Card image cap">
+    <div class="col-md-7 offset-md-1">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-4 shadow-sm">
+            <p>Profile Picture</p>
+            <img class="img" src="{{user.profile_pic}}" alt="Card image cap">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p class="text-info">
+            NAME: {{user.name}}
+          </p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-info">
+            ABOUT: {{user.about}}
+          </p>
+        </div>
+        <div class="col-md-4">
+          <p class="text-info">GALLERY:</p>
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-12">
-      <p class="text-info">
-        NAME: DESIGNER'S NAME
-      </p>
-    </div>
-    <div class="col-md-12">
-      <p class="text-info">
-        ABOUT: ABOUT DESIGNER
-      </p>
-    </div>
-  </div>
-  <p class="text-info">GALLERY:</p>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img class="card-img-top" src="{{img_url}}" alt="Card image cap">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img class="card-img-top" src="{{img_url}}" alt="Card image cap">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-        <img class="card-img-top" src="{{img_url}}" alt="Card image cap">
+    </div> <!--col-md-7 -->
+
+    <div class="col-md-3 offset-md-1">
+      <div class="row">
+        <div class="col-md-6">
+          <a routerLink="/designer/edit/{{user.id}}" class="btn btn-secondary btn-block">Edit Profile</a>
+        </div>
+        <div class="col-md-6">
+          <a routerLink="/logout" class="btn btn-secondary btn-block">Logout</a>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
+  </div> <!--row-->
+</div> <!--container-->
