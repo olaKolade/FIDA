@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div>
+        <div *ngIf="!returnedRes" class="alert alert-danger">
+          <p>Email Address Does Not exist, Please try creating a new account</p>
+        </div>
+        <form class="form-horizontal" (ngSubmit)="onSubmit()" #reset="ngForm">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control"
+            [(ngModel)]="user.email" name="email" id="email" required #name="ngModel"/> <br />
+          </div>
+          <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!reset.form.valid">Reset</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</div>

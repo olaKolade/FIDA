@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div>
+        <div class="row float-right">
+          <a class="btn btn-secondary" routerLink="/admin/newsIndex">Go Back</a>
+        </div>
+        <div class="row">
+          <p></p>
+        </div>
+        <div *ngIf="error" class="alert alert-danger">
+          {{resMes}}
+        </div>
+      <form class="form-horizontal" (ngSubmit)="onSubmit()" #signup="ngForm">
+        <div class="form-group">
+          <label for="name">Title:</label>
+          <input type="text" class="form-control"
+          [(ngModel)]="news.title" name="title" id="title"  #title="ngModel"/> <br />
+        </div>
+
+        <div class="form-group">
+          <label for="about">News Body:</label>
+          <textarea name="body" class="form-control" rows="8" cols="50" [(ngModel)]="news.body" name="body" required></textarea> <br />
+        </div>
+        <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!signup.form.valid">Add News</button>
+      </form>
+    </div>
+    </div>
+
+  </div>
+
+</div>

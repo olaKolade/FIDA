@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row float-right" *ngIf="loggedIn">
+    <a routerLink="/designer/{{id}}" class="btn btn-secondary">My profile</a>
+  </div>
+  <div class="row float-right" *ngIf="admin">
+    <a routerLink="/admin/index" class="btn btn-secondary">Admin profile</a>
+  </div>
+  <div class="row">
+    <p></p>
+  </div>
+  <div class="container">
+    <div class="page-heading-two">
+      <h2>{{page_title}}</h2>
+      <div class="clearfix"></div>
+    </div>
+    <!--   Actual content for donation form -->
+    <div *ngIf="!login" class="alert alert-warning">
+      <p>You need to <em>log in</em> first </p>
+    </div>
+    <div class="non-profit">
+      <div class="row">
+        <div class="col-md-5 col-sm-5 offset-md-1">
+          <div class="np-donation">
+            <img src="./../../assets/img/user/2.jpg" class="img-responsive img-thumbnail" alt=""/>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+          <p>Do you want more exposure? <br> Do you want incorporation with more international manufacturers?
+            <br>
+            Do you want to transfer your ideas into a reality? <br>Do you want your own personal advisor?
+          </p>
+          <div *ngIf="!admin && !loggedIn">
+            <a routerLink="login" class="btn btn-white" >Login</a> &nbsp;
+            <a class="btn btn-color"routerLink="signup">Create my Page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-1"></div>
+  <div class="row">
+    <div *ngFor="let user of users" class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <ul class="horizontal-list"  style="list-style: none;padding:0;display:inline;">
+          <li class="">
+            <a routerLink="/designer/view/{{user.id}}">
+              <img src="/uploads/{{user.profile_pic}}" alt="Profile Pic" class="img imgL img-responsive" />
+            </a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <a routerLink="/designer/view/{{user.id}}">
+            <h4 class="card-text">{{user.name}}</h4>
+          </a>
+          <h6>About User:</h6>
+          <p class="card-text">{{user.about}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

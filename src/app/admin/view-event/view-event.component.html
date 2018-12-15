@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="row">
+        <div class="col-md-12" *ngIf="event.title">
+          <div class="row">
+            <img src="./../../uploads/event/{{event.image}}" alt="">
+          </div>
+          <label for="title" class="form-label">Title:</label> <h3>{{event.title}}</h3> <br />
+
+          <br />
+
+          <label for="body" class="form-label">Body: <br> </label> {{event.body}}<br />
+          <form  #eventForm="ngForm" (ngSubmit)="onSubmit()">
+            <span style="color: #0D7C15;"><label class="btn btn-primary upload-btn" style="background: #0D7C15;margin-right: 10px;">
+                Add Picture <input type="file" name="file" hidden (change)="onFileSelected($event)">
+            </label>
+            </span>
+            <button type="button" class="btn btn-secondary" (click)="onUpload()">Upload</button>
+          </form>
+          <a routerLink="/admin/event" class="btn btn-lg btn-success">Go Back</a>
+          <button type="button"  class="btn btn-lg btn-danger" (click)="delete()">Delete News</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

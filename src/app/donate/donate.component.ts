@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-donate',
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.css']
 })
-export class DonateComponent implements OnInit {
+export class DonateComponent{
   page_title: string = 'DONATE';
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor() {  }
+
+
 
 }

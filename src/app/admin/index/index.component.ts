@@ -12,11 +12,25 @@ import { UserService } from './../../services/user.service';
 })
 export class IndexComponent{
 
+  public adminValue: string;
+  public admin: boolean;
   constructor(
     private router: Router,
     private userService: UserService
   ){
+    this.adminValue = sessionStorage.getItem('admin');
+    if(this.adminValue === 'true'){
+      this.admin = true;
+      console.log("yes admin");
+    } else {
+      this.router.navigate(['/designer'], {queryParams: {login: 0}});
+    }
     this.index();
+    //this.reload();
+  }
+
+  reload(){
+    window.location.reload();
   }
 
 
@@ -24,20 +38,18 @@ export class IndexComponent{
 
     index(){
       this.userService
-        .index()
+        .indexUsers()
         .subscribe(response => {
           this.users = response;
         })
     }
 
     delete(id){
-      console.log(id);
       this.userService
         .deleteUser({id: id})
         .subscribe(response => {
           if(response.success){
-            console.log("it got here");
-            this.router.navigate(['/admin']);
+              window.location.reload();
           }
         })
     }

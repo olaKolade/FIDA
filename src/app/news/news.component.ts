@@ -1,17 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
+import { News } from './../news';
+import { NewsService } from './../services/news.service';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
-export class NewsComponent implements OnInit {
-  page_title = 'NEWS AND EVENTS';
-  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
-  constructor() {
+export class NewsComponent{
+  page_title = 'NEWS';
+
+  constructor(private newsService: NewsService) {
+    this.index();
   }
 
-  ngOnInit() {
-  }
+
+  news: Array<object>;
+
+    index(){
+      this.newsService.indexNews()
+        .subscribe(response => {
+          this.news = response;
+        })
+    }
+
 
 }

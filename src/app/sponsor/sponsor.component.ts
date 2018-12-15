@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sponsor.component.css']
 })
 export class SponsorComponent implements OnInit {
+
+  myCarouselImages =["./../../assets/img/clients/c1-1.png", "./../../assets/img/clients/c1-2.png",
+                     "./../../assets/img/clients/c1-3.png", "./../../assets/img/clients/c1-4.png",
+                     "./../../assets/img/clients/c1-5.png", "./../../assets/img/clients/c1-6.png",
+                     "./../../assets/img/clients/c1-3.png"];
+  myCarouselOptions={items: 7, dots: true, nav: true};
+
   page_title: string = 'SPONSORS';
-  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {
   }

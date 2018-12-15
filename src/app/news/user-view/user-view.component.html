@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="row">
+        <div class="col-md-12" *ngIf="news.title">
+          <h3>{{news.title}}</h3>
+          <img src="./../../uploads/news/{{news.image}}" class="img-responsive" />
+          <p class="text-primary">{{news.body}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,11 +13,16 @@ import { UserService } from './../../services/user.service';
 })
 export class ViewComponent implements OnInit{
   user= new User;
+  public adminValue: string;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService
   ){
+    this.adminValue = sessionStorage.getItem('admin');
+    if(this.adminValue !== 'true'){
+      this.router.navigate(['/designer'], {queryParams: {login: 0}});
+    }
   }
 
 
@@ -30,14 +35,12 @@ export class ViewComponent implements OnInit{
       this.userService
         .showUser({id: id})
         .subscribe(response => {
-          console.log(response);
-          this.user = response;
+          this.user = response.user;
         })
     }
 
     delete(){
       const id = +this.route.snapshot.paramMap.get('id');
-      console.log(id);
       this.userService
         .deleteUser({id: id})
         .subscribe(response => {

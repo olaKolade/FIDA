@@ -1,12 +1,9 @@
 <div class="container">
-  <h3 class="left">{{page_title}}</h3>
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <p>Donate to the organization to see our cause pushed further
-        <a class="btn btn-sm btn-primary" href="https://rave.flutterwave.com/donate/c0zfynffcxfj">Donate now</a>
-      </p>
-
-    </div>
+  <div class="page-heading-two">
+    <h2>{{page_title}}</h2>
+    <div class="clearfix"></div>
+  </div>
+  <div class="">
     <!--<angular-rave
     [PBFPubKey] = "'FLWPUBK-XXXXXXXXXXXX'"
     [customer_email] = "'olayanju04@gmail.com'"
@@ -18,4 +15,37 @@
     (close)="paymentFailure()"
   ></angular-rave>-->
   </div>
+</div>
+
+<div class="container">
+
+  <!-- Actual content for donation form -->
+  <div class="non-profit">
+    <div class="row">
+      <div class="col-md-5 col-sm-5">
+        <!-- Donation sidebar -->
+        <div class="block-heading-two">
+          <h3><span>Every $ Makes A Difference</span></h3>
+        </div>
+
+        <img src="./../../assets/img/magazine/small/2.jpg" class="img-responsive img-thumbnail" alt=""/>
+
+
+      </div>
+      <div class="col-md-7 col-sm-7">
+        <!-- Donation form -->
+        <div class="np-donation">
+          <!-- heading -->
+          <div class="block-heading-two">
+            <h3><span>Your Donation Helps</span></h3>
+          </div>
+          <p>Lorem ipsum dolor sit amet, conse ctetur adipi icing elit, sed do eiusmod tempor in ididunt ut labore et itation iquip ex ea commo it si ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, conse ctetur adipi icing elit, sed do eiusmod tempor in ididunt ut labore et itation  consequat.</p>
+
+          <a class="btn btn-sm btn-color" href="https://rave.flutterwave.com/donate/c0zfynffcxfj">Donate now</a> &nbsp;
+          <a routerLink="/about" class="btn btn-white">Contact Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

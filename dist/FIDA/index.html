@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IDA</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  		<!-- Description, Keywords and Author -->
+  		<meta name="description" content="Your description">
+  		<meta name="keywords" content="Your,Keywords">
+  		<meta name="author" content="ResponsiveWebInc">
+
+      <!-- Styles -->
+  		<!-- Bootstrap CSS -->
+  		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  		<!-- Font awesome CSS -->
+  		<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+  		<!-- Magnific Popup -->
+  		<link href="/assets/css/magnific-popup.css" rel="stylesheet">
+  		<!-- Owl carousel -->
+  		<link href="/assets/css/owl.carousel.css" rel="stylesheet">
+
+  		<!-- CSS for this page -->
+  		<!-- Revolution Slider -->
+  		<link href="/assets/css/settings.css" rel="stylesheet">
+
+  		<!-- Base style -->
+  		<link href="/assets/css/styles/style.css" rel="stylesheet">
+  		<!-- Skin CSS -->
+  		<link href="/assets/css/styles/skin-lblue.css" rel="stylesheet" id="color_theme">
+
+  		<!-- Custom CSS. Type your CSS code in custom.css file -->
+  		<link href="/assets/css/custom.css" rel="stylesheet">
+
+  		<!-- Favicon -->
+  		<link rel="shortcut icon" href="#">
+
+
+
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+
+      <script src="https://unpkg.com/zone.js@0.8.4?main=browser"></script>
+    <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+
+    <link href="https://unpkg.com/flatpickr@4.5.2/dist/flatpickr.css" rel="stylesheet">
+
+    <script src="systemjs.config.server.js"></script>
+
+    <script type="application/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+<script type="application/javascript" src="/node_modules/owl.carousel/dist/owl.carousel.js"></script>
+
+
+
+  <style type="text/css">
+   body, html {
+     height: 100%;
+   }
+   .app-loading {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+   }
+   .app-loading .spinner {
+     height: 200px;
+     width: 200px;
+     animation: rotate 2s linear infinite;
+     transform-origin: center center;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+   }
+   .app-loading .spinner .path {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+     animation: dash 1.5s ease-in-out infinite;
+     stroke-linecap: round;
+     stroke: #ddd;
+   }
+   @keyframes rotate {
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+   @keyframes dash {
+     0% {
+       stroke-dasharray: 1, 200;
+       stroke-dashoffset: 0;
+     }
+     50% {
+       stroke-dasharray: 89, 200;
+       stroke-dashoffset: -35px;
+     }
+     100% {
+       stroke-dasharray: 89, 200;
+       stroke-dashoffset: -124px;
+     }
+   }
+  </style>
+</head>
+<body>
+  <app-root>
+    <!-- loading layout replaced by app after startupp -->
+          <div class="app-loading">
+            <div class="logo"></div>
+            <svg class="spinner" viewBox="25 25 50 50">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+  </app-root>
+  <script src="//rave-api-v2.herokuapp.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="scripts.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
+</html>

@@ -1,34 +1,68 @@
+<main class="container">
+  <div class="blog-two">
+    <div class="row">
 
-<div class="container">
+      <!-- Sidebar column -->
+      <div class="col-md-2">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Categories Widget -->
+          <div class="s-widget">
+            <!-- Heading -->
+            <h5><i class="fa fa-folder color"></i>&nbsp; Categories</h5>
+            <!-- Widgets Content -->
+            <div class="widget-content categories">
+              <ul class="list-6">
+                <li><a routerLink="/admin/index">Users</a></li>
+                <li><a routerLink="/admin/newsIndex">News</a></li>
+                <li><a routerLink="/admin/event">Events</a></li>
+                <li><a routerLink="/admin/calendar">Calendar</a></li>
+                <li><a routerLink="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Mainbar column -->
+      <div class="col-md-10">
+        <div class="table-responsive">
+          <table class="table table-hover table-sm">
+            <caption>List of Users</caption>
+            <thead class="thead-light">
+              <th scope="col">S/N</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Age</th>
+              <th scope="col">About</th>
+              <th scope="col">View</th>
+              <th scope="col">Delete</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users; let i=index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.about}}</td>
+                <td><a routerLink="/admin/view/{{user.id}}" class="btn btn-sm btn-dark">View</a></td>
+                <td class="table-danger"><button type="button" class="btn btn-sm btn-danger" (click)="delete(user.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
   <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="table-responsive">
-        <table class="table table-hover table-sm">
-          <caption>List of Users</caption>
-          <thead class="thead-light">
-            <th scope="col">S/N</th>
-            <th scope="col">Full Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Age</th>
-            <th scope="col">About</th>
-            <th scope="col">View</th>
-            <th scope="col">Delete</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let user of users; let i=index">
-              <th scope="row">{{i + 1}}</th>
-              <td>{{user.name}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.age}}</td>
-              <td>{{user.about}}</td>
-              <td><a routerLink="/admin/view/{{user.id}}" class="btn btn-sm btn-dark">View</a></td>
-              <td class="table-danger"><button type="button" class="btn btn-sm btn-danger" (click)="delete(user.id)">Delete</button></td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="col-md-2">
+      <div class="btn-group-vertical btn-block">
+        <!-- <a routerLink="/admin/event" class="btn btn-secondary btn-block">Events</a> -->
       </div>
     </div>
+    <div class="col-md-10">
 
+    </div>
   </div>
-
 </div>
+</div>
+</main>

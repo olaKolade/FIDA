@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="row">
+        <div class="col-md-12" *ngIf="news.title">
+          <div class="row">
+            <img src="./../../uploads/news/{{news.image}}" alt="">
+          </div>
+          <div *ngIf="!returnedRes" class="alert alert-warning">
+            <p>{{returnedMess}}</p>
+          </div>
+          <label for="title" class="form-label">Title:</label> <h3>{{news.title}}</h3> <br />
+
+          <br />
+
+          <label for="body" class="form-label">Body: <br> </label> {{news.body}}<br />
+          <form  #newsForm="ngForm" (ngSubmit)="onSubmit()">
+            <span style="color: #0D7C15;"><label class="btn btn-primary upload-btn" style="background: #0D7C15;margin-right: 10px;">
+                Add Picture <input type="file" name="file" hidden (change)="onFileSelected($event)">
+            </label>
+            </span>
+            <button type="button" class="btn btn-secondary" (click)="onUpload()">Upload</button>
+          </form>
+          <a routerLink="/admin/newsIndex" class="btn btn-lg btn-success">Go Back</a>
+          <button type="button"  class="btn btn-lg btn-danger" (click)="delete()">Delete News</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

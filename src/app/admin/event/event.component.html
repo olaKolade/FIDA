@@ -1,0 +1,70 @@
+<main class="container">
+  <div class="blog-two">
+    <div class="row">
+
+      <!-- Sidebar column -->
+      <div class="col-md-2">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Categories Widget -->
+          <div class="s-widget">
+            <!-- Heading -->
+            <h5><i class="fa fa-folder color"></i>&nbsp; Categories</h5>
+            <!-- Widgets Content -->
+            <div class="widget-content categories">
+              <ul class="list-6">
+                <li><a routerLink="/admin/index">Users</a></li>
+                <li><a routerLink="/admin/newsIndex">News</a></li>
+                <li><a routerLink="/admin/event">Events</a></li>
+                <li><a routerLink="/admin/calendar">Calendar</a></li>
+                <li><a routerLink="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Mainbar column -->
+      <div class="col-md-10">
+        <a routerLink="#add" class="btn btn-success">+ Event</a>
+        <div class="table-responsive">
+          <table class="table table-hover table-sm">
+            <caption>List of Event</caption>
+            <thead class="thead-light">
+              <th scope="col">S/N</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Body</th>
+              <th scope="col">View</th>
+              <th scope="col">Delete</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of events; let i=index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{event.title}}</td>
+                <td>{{event.body}}</td>
+                <td><a routerLink="/admin/viewEvent/{{event.id}}" class="btn btn-sm btn-dark">View</a></td>
+                <td class="table-danger"><button type="button" class="btn btn-sm btn-danger" (click)="delete(event.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form class="form-horizontal" (ngSubmit)="onSubmit()" #signup="ngForm">
+          <div class="form-group">
+            <label for="name">Title:</label>
+            <input type="text" class="form-control"
+            [(ngModel)]="model.title" name="title" id="title"  #title="ngModel"/> <br />
+          </div>
+
+          <div class="form-group">
+            <label for="about">Event Body:</label>
+            <textarea name="body" class="form-control" rows="8" cols="50" [(ngModel)]="model.body" name="body" required></textarea> <br />
+          </div>
+          <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!signup.form.valid">Add Event</button>
+        </form>
+
+      </div>
+</div>
+</div>
+</main>

@@ -1,0 +1,30 @@
+<div class="container">
+  <h3 class="left">{{page_title}}</h3>
+  <div class="row">
+    <div class="col-md-7 offset-md-1">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="mb-4 shadow-sm">
+            <ul class="horizontal-list"  style="list-style: none;padding:0;"><li class="crop"> <a href="/uploads/{{user.profile_pic}}" target="_blank"> <img src="/uploads/{{user.profile_pic}}" class="img img-responsive" alt="Profile Picture"/></a> </li></ul>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p class="text-info">
+            NAME: {{user.name}}
+          </p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-info">
+            ABOUT: {{user.about}}
+          </p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-info">GALLERY:</p>
+          <a *ngFor="let url of urls"  target="_blank" style="display:inline;" href="/uploads/{{url}}">
+            <ul class="horizontal-list"  style="list-style: none;padding:0;display:inline;"><li class=""> <img  src="/uploads/{{url}}" class="img img-responsive" alt="Gallery Picture"/> </li></ul>
+          </a>
+        </div>
+      </div>
+    </div> <!--col-md-7 -->
+  </div> <!--row-->
+</div> <!--container-->

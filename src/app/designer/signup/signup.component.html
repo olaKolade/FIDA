@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div>
+        <div class="row float-right">
+          <a routerLink="/designer/login" class="btn btn-white" >Login</a> &nbsp;
+          <a class="btn btn-color" routerLink="/designer">Go Back</a>
+        </div>
+        <div class="clearfix"></div>
+        <div *ngIf="!returnedRes" class="alert alert-danger">
+          <p>{{returnedMess}}</p>
+        </div>
+      <form class="form-horizontal" (ngSubmit)="onSubmit()" #signup="ngForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control"
+          [(ngModel)]="model.name" name="name" id="name" required #name="ngModel"/> <br />
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" class="form-control" name="age" id="age" [(ngModel)]="model.age" /> <br />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email"
+           name="email" class="form-control"
+          [(ngModel)]="model.email" id="email" required/> <br />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password"
+           name="password" class="form-control"
+          [(ngModel)]="model.password" id="password" required/> <br />
+        </div>
+        <div class="form-group">
+          <label for="about">About Me:</label>
+          <textarea name="about" class="form-control" rows="8" cols="50" [(ngModel)]="model.about" name="about" required></textarea> <br />
+        </div>
+        <button type="submit"  class="btn btn-lg btn-block btn-success" [disabled]="!signup.form.valid"> Create my Account</button>
+      </form>
+    </div>
+    </div>
+
+  </div>
+
+</div>

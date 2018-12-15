@@ -1,12 +1,20 @@
 <div class="container">
   <h3 class="left">{{page_title}}</h3>
+  <div class="" *ngIf="loggedIn">
+    <a routerLink="#" class="btn btn-secondary">My profile</a>
+  </div>
+  <div class="" *ngIf="admin">
+    <a routerLink="/admin/index" class="btn btn-secondary">Admin profile</a>
+  </div>
+  <div class="row">
+    <p></p>
+  </div>
   <div class="row">
     <div class="col-md-7 offset-md-1">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
           <div class="mb-4 shadow-sm">
-            <p>Profile Picture</p>
-            <img class="img" src="{{user.profile_pic}}" alt="Card image cap">
+            <ul class="horizontal-list"  style="list-style: none;padding:0;"><li class="crop"> <a href="/uploads/{{user.profile_pic}}" target="_blank"> <img src="/uploads/{{user.profile_pic}}" class="img img-responsive" alt="Profile Picture"/></a> </li></ul>
           </div>
         </div>
         <div class="col-md-12">
@@ -19,25 +27,14 @@
             ABOUT: {{user.about}}
           </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <p class="text-info">GALLERY:</p>
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{user.gallery}}" alt="Gallery Pictures">
-          </div>
+          <a *ngFor="let url of urls"  target="_blank" style="display:inline;" href="/uploads/{{url}}">
+            <ul class="horizontal-list"  style="list-style: none;padding:0;display:inline;"><li class=""> <img  src="/uploads/{{url}}" class="img img-responsive" alt="Gallery Picture"/> </li></ul>
+          </a>
         </div>
       </div>
     </div> <!--col-md-7 -->
-
     <div class="col-md-3 offset-md-1">
       <div class="row">
         <div class="col-md-6">
@@ -48,6 +45,5 @@
         </div>
       </div>
     </div>
-
   </div> <!--row-->
 </div> <!--container-->

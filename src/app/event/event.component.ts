@@ -1,16 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Event } from './../event';
+import { EventService } from './../services/event.service';
+
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css']
 })
-export class EventComponent implements OnInit {
-  page_title: string = "EVENT";
-  public img_url:string = "kjl.png";
-  constructor() { }
+export class EventComponent{
+  page_title = 'EVENT';
 
-  ngOnInit() {
+  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
+    constructor(private eventService: EventService) {
+    this.index();
   }
+
+
+  events: Array<object>;
+
+    index(){
+      this.eventService.indexEvent()
+        .subscribe(response => {
+          this.events = response;
+        })
+    }
+
 
 }

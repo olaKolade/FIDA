@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "~owl.carousel/dist/assets/owl.carousel.css";
+@import "~owl.carousel/dist/assets/owl.theme.default.css";
+
+body{
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+.crop{height: 200px;width: 200px;overflow: hidden;}.crop img {height: auto;width: 400px;}

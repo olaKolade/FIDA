@@ -1,0 +1,58 @@
+<main class="container">
+  <div class="blog-two">
+    <div class="row">
+
+      <!-- Sidebar column -->
+      <div class="col-md-2">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Categories Widget -->
+          <div class="s-widget">
+            <!-- Heading -->
+            <h5><i class="fa fa-folder color"></i>&nbsp; Categories</h5>
+            <!-- Widgets Content -->
+            <div class="widget-content categories">
+              <ul class="list-6">
+                <li><a routerLink="/admin/index">Users</a></li>
+                <li><a routerLink="/admin/newsIndex">News</a></li>
+                <li><a routerLink="/admin/event">Events</a></li>
+                <li><a routerLink="/admin/calendar">Calendar</a></li>
+                <li><a routerLink="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Mainbar column -->
+      <div class="col-md-10">
+        <div *ngIf="!returnedRes" class="alert alert-warning">
+          <p>{{returnedMess}}</p>
+        </div>
+        <a routerLink="/admin/addNews" class="btn btn-success">+ News</a>
+        <div class="table-responsive">
+          <table class="table table-hover table-sm">
+            <caption>List of News</caption>
+            <thead class="thead-light">
+              <th scope="col">S/N</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Body</th>
+              <th scope="col">View</th>
+              <th scope="col">Delete</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let news of news; let i=index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{news.title}}</td>
+                <td>{{news.body}}</td>
+                <td><a routerLink="/admin/viewNews/{{news.id}}" class="btn btn-sm btn-dark">View</a></td>
+                <td class="table-danger"><button type="button" class="btn btn-sm btn-danger" (click)="delete(news.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+</div>
+</main>
