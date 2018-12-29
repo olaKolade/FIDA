@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { News } from './../../news';
 
-import { Location } from '@angular/common';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { NewsService } from './../../services/news.service';
 
@@ -11,26 +10,23 @@ import { NewsService } from './../../services/news.service';
   templateUrl: './user-view.component.html',
   styleUrls: ['./user-view.component.css']
 })
-export class UserViewComponent implements OnInit{
-  news= new News;
+export class UserViewComponent implements OnInit {
+  news = new News;
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private newsService: NewsService
-  ){
-  }
+  ) {}
 
-
-  ngOnInit(){
+  ngOnInit() {
     this.showNews();
   }
 
-    showNews(){
+    showNews() {
       const id = +this.route.snapshot.paramMap.get('id');
       this.newsService
         .showNews({id: id})
         .subscribe(response => {
-          this.news = response;
-        })
+          this.news = response.news;
+        });
     }
 }

@@ -6,5 +6,6 @@ export class User {
     public password: string;
     public email: string;
     public about: string;
+    public reset: string;
     public gallery?: Array<string>;
 }

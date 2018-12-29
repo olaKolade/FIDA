@@ -8,10 +8,10 @@ import { EventService } from './../services/event.service';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css']
 })
-export class EventComponent{
+export class EventComponent {
   page_title = 'EVENT';
 
-  public img_url: string = "./../../assets/img/placeholders/358x244.jpg";
+  public img_url = './../../assets/img/placeholders/358x244.jpg';
     constructor(private eventService: EventService) {
     this.index();
   }
@@ -19,11 +19,11 @@ export class EventComponent{
 
   events: Array<object>;
 
-    index(){
+    index() {
       this.eventService.indexEvent()
         .subscribe(response => {
           this.events = response;
-        })
+        });
     }
 
 

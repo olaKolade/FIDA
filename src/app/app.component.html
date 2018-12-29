@@ -12,7 +12,7 @@
         <i class="fa fa-phone color"></i> &nbsp; +1 (342)-(323)-4923
       </div>
       <!-- Contact ends -->
-      <div class="tb-social pull-left">
+      <div class="tb-social pull-right">
         <div class="" *ngIf="loggedIn">
           <a routerLink="/designer/{{id}}" class="btn btn-secondary">My profile</a>
         </div>
@@ -24,8 +24,8 @@
         </div>
       </div>
       <!-- Social media starts -->
-      <div class="tb-social pull-left">
-        <div class="brand-bg text-left">
+      <div class="tb-social pull-right">
+        <div class="brand-bg text-right">
           <!-- Brand Icons -->
           <a href="#" class="facebook"><i class="fa fa-facebook square-2 rounded-1"></i></a>
           <a href="#" class="twitter"><i class="fa fa-twitter square-2 rounded-1"></i></a>
@@ -45,13 +45,11 @@
         <div class="col-md-4">
           <!-- Logo section -->
           <div class="logo">
-            <img src="{{title}}" alt="FIDA" class="img img-responsive" />
-            <!-- <h1 style="display:inline;"><a href="#"><i class="fa fa-user"></i> {{ abbr }}</a></h1>
-            <h3 style="display:inline;"><a class="color" href="#">{{ title }}</a></h3> -->
+            <img src="{{title}}" alt="FIDA" class="img img-responsive" style="height:100px;width:250px"/>
           </div>
         </div>
-        <div class="col-md-8 hidden-sm">
-          <div class="col-sm-12  py-4">
+        <div class="col-md-8">
+          <div class="col-sm-12">
             <div class="btn-group btn-group-xs  flex-wrap" data-toggle="buttons">
               <a routerLink="/home" class="btn btn-secondary btn-sm" style="color:white;" role="button">Home</a>
               <a routerLink="/news" class="btn btn-success btn-sm" style="color:white;" role="button">News</a>
@@ -63,19 +61,6 @@
               <a routerLink="/about" class="btn btn-danger btn-sm" style="color:white;" role="button">About Us</a>
             </div>
           </div>
-          <!-- <div class="navy">
-            <ul>
-              <!-- Main menu
-              <li><a routerLink="/home" class="btn btn-secondary btn-sm" style="color:white;" role="button">Home</a></li>
-              <li><a routerLink="/news" class="btn btn-success btn-sm" style="color:white;" role="button">News</a></li>
-              <li><a routerLink="/event" class="btn btn-danger btn-sm" style="color:white;" role="button">Events</a></li>
-              <li><a routerLink="/sponsor" class="btn btn-success btn-sm" style="color:white;" role="button">Sponsors</a></li>
-              <li><a routerLink="/donate" class="btn btn-secondary btn-sm" style="color:white;" role="button">Donate Now</a></li>
-              <li><a routerLink="/designer" class="btn btn-color btn-sm" style="color:white;" role="button">Designer</a></li>
-              <li><a routerLink="/volunteer" class="btn btn-warning btn-sm" style="color:white;" role="button">Volunteer</a></li>
-              <li><a routerLink="/about" class="btn btn-danger btn-sm" style="color:white;" role="button">About Us</a></li>
-            </ul>
-          </div> -->
           <!-- Navigation ends -->
         </div>
       </div>

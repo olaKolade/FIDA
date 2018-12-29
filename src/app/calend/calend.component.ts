@@ -7,12 +7,8 @@ import {
 import {
   startOfDay,
   endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
   isSameDay,
-  isSameMonth,
-  addHours
+  isSameMonth
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -130,25 +126,25 @@ export class CalendComponent {
     //   }
     // ];
 
-    activeDayIsOpen: boolean = true;
+    activeDayIsOpen = true;
 
     constructor(private modal: NgbModal, private _calendar: CalendarService) {
       this.loggedInValue = sessionStorage.getItem('loggedInValue');
-      if(this.loggedInValue === 'true'){
+      if (this.loggedInValue === 'true') {
         this.loggedIn = true;
       }
       this.adminValue = sessionStorage.getItem('admin');
-      if(this.adminValue === 'true'){
+      if (this.adminValue === 'true') {
         this.admin = true;
       }
 
       this.indexCalendar();
     }
-    indexCalendar(){
+    indexCalendar() {
       this._calendar.indexCalendar()
-      .subscribe(response=>{
-        //console.log(response);
-        response.forEach( (element)=> {
+      .subscribe(response => {
+        // console.log(response);
+        response.forEach( (element) => {
           this.events.push({
             id: element.id,
             title: element.title,
@@ -208,55 +204,55 @@ export class CalendComponent {
       this.refresh.next();
     }
 
-    onSub(){
-      //elements gotten from user submit button
-      this.events.forEach( (element)=> {
-        if(this.returnedEventsId.includes(element.id)){
-          //TODO exists in the database
-          this.MyEvents.forEach( (myElement)=>{
-          //check if their are changes in title, start, end, color
-            if(element.id == myElement.id){
-              if(myElement.title !== element.title){
-                //title has changeD
-                console.log("title has changed");
+    onSub() {
+      // elements gotten from user submit button
+      this.events.forEach( (element) => {
+        if (this.returnedEventsId.includes(element.id)) {
+          // TODO exists in the database
+          this.MyEvents.forEach( (myElement) => {
+          // check if their are changes in title, start, end, color
+            if (element.id === myElement.id) {
+              if (myElement.title !== element.title) {
+                // title has changeD
+                console.log('title has changed');
                 this._calendar.editCalendar({'title': element.title, 'id': element.id})
-                  .subscribe( response=> {
+                  .subscribe( response => {
                     console.log(response);
                   });
               }
 
-              if(myElement.start.getTime() !== element.start.getTime()) {
-                //start has changed
+              if (myElement.start.getTime() !== element.start.getTime()) {
+                // start has changed
                 this._calendar.editCalendar({'start': element.start, 'id': element.id})
                    .subscribe();
-                console.log("start has changed");
+                console.log('start has changed');
               }
 
-              if(myElement.end.getTime() !== element.end.getTime()) {
-                //end has changed
+              if (myElement.end.getTime() !== element.end.getTime()) {
+                // end has changed
                 this._calendar.editCalendar({'end': element.end, 'id': element.id})
                    .subscribe();
-                console.log("end has changed");
+                console.log('end has changed');
               }
 
-              if(myElement.color.primary !== element.color.primary || myElement.color.secondary !== element.color.secondary) {
-                //color has changed
+              if (myElement.color.primary !== element.color.primary || myElement.color.secondary !== element.color.secondary) {
+                // color has changed
                 this._calendar.editCalendar({'color': element.color, 'id': element.id})
                    .subscribe();
-                console.log("color has changed");
+                console.log('color has changed');
               }
             }
           });
 
         } else {
-          //TODO has not been added
+          // TODO has not been added
           this.eventArr.push(element);
         }
       });
 
-      if(this.eventArr.length > 0){
+      if (this.eventArr.length > 0) {
         this._calendar.addCalendar(this.eventArr)
-          .subscribe(response=>{
+          .subscribe(response => {
             console.log(response);
             this.eventArr = [];
           });
@@ -264,7 +260,7 @@ export class CalendComponent {
       window.location.reload();
     }
 
-    deleteEvent(id){
+    deleteEvent(id) {
       this._calendar.deleteCalendar({'id': id})
         .subscribe( response => {
           window.location.reload();

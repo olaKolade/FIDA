@@ -40,9 +40,56 @@
             <h3><span>Your Donation Helps</span></h3>
           </div>
           <p>Lorem ipsum dolor sit amet, conse ctetur adipi icing elit, sed do eiusmod tempor in ididunt ut labore et itation iquip ex ea commo it si ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, conse ctetur adipi icing elit, sed do eiusmod tempor in ididunt ut labore et itation  consequat.</p>
-
-          <a class="btn btn-sm btn-color" href="https://rave.flutterwave.com/donate/c0zfynffcxfj">Donate now</a> &nbsp;
-          <a routerLink="/about" class="btn btn-white">Contact Now</a>
+          <h5 class="text-info">You can also Donate with your PayPal account, Just Click the PayPal Button. <br /> Otherwise, Fill the Form and Select Your Card Type To Continue</h5>
+          <a routerLink="/about" class="btn btn-white pull-right">Contact Now</a>
+          <div class="clear-fix"></div>
+          <form role="form">
+            <div class="form-group">
+             <label for="inputname">Your Name <small>Card Payment Only</small></label>
+             <input type="text"  ([ngModel])="donor.name" class="form-control" id="inputname" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+             <label for="exampleInputEmail1">Email address</label>
+             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+             <label for="inputphone">Phone Number</label>
+             <input type="text" ([ngModel])="donor.phone" class="form-control" id="inputphone" placeholder="Enter Phone No.">
+            </div>
+            <div class="form-group">
+             <label>Address</label>
+             <textarea class="form-control" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+             <label for="inputamount">Amount</label>
+             <input type="number" ([ngModel])="donor.donation" class="form-control" id="inputamount" placeholder="$ 0.00">
+            </div>
+            <hr />
+            <!-- <h5>Credit Card Details</h5>
+            <div class="form-group">
+             <label>Card Type</label>
+             <select class="form-control">
+               <option>Card Type</option>
+               <option>MasterCard</option>
+               <option>Visa</option>
+               <option>American Express</option>
+               <option>DinarClub</option>
+             </select>											 
+            </div>
+            <div class="form-group">
+             <label for="inputcardnumber">Credit Card Number</label>
+             <input type="text" class="form-control" id="inputcardnumber" placeholder="Card Number">
+            </div>
+            <div class="form-group">
+             <label for="inputdate">Expiry Date</label>
+             <input type="text" class="form-control" id="inputdate" placeholder="Enter Expiry Date">
+            </div>
+            <div class="form-group">
+             <label for="inputccv">CCV</label>
+             <input type="text" class="form-control" id="inputccv" placeholder="Enter CVV Number">
+            </div>										   -->
+          </form>
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         </div>
       </div>
     </div>

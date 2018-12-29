@@ -48,12 +48,10 @@
       <br>
     </div>
   </div>
-  <div class="row"><img src="./../../assets/img/large.png" class="img  img-responsive" /></div>
-
-  <!-- <div class="block-heading-two text-center">
-    <h3><span>Upcoming Events</span></h3>
+  <div class="">
+    <img src="./../../assets/img/large.png" class="img img-responsive" />
   </div>
-  <app-calend></app-calend> -->
+
 
   <div class="block-heading-two text-center">
     <h3><span>Subscribe to our newsletters</span></h3>
@@ -70,16 +68,16 @@
           <form (ngSubmit)="onSubscribe()" #subscribe="ngForm">
             <!-- Input Group -->
             <div class="input-group">
-              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.email" placeholder="Enter Email Id">
+              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.email" placeholder="Enter Email Id" required>
               <span class="input-group-btn">
                 <button class="btn btn-color" type="submit" [disabled]="!subscribe.form.valid">Subscribe</button>
               </span>
             </div>
             <br />
             <div class="input-group">
-              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.name" style="display:inline;width:200px;margin-right:10px;" placeholder="Name">
-              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.title" style="display:inline;width:200px;margin-right:10px;" placeholder="Title">
-              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.company" style="display:inline;width:200px;" placeholder="Company">
+              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.name" style="display:inline;width:200px;margin-right:10px;" placeholder="Name" required>
+              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.title" style="display:inline;width:200px;margin-right:10px;" placeholder="Title" required>
+              <input type="text" class="form-control" name="sub_email" [(ngModel)]="_sub.company" style="display:inline;width:200px;" placeholder="Company" required>
             </div>
           </form>
         </div>
@@ -93,60 +91,23 @@
   </div>
   <!-- Client One Starts -->
   <br />
-  <div class="client-one">
-    <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
-      <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
-        <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+    <div class="col-md-10 offset-md-1">
+      <div class="client-one">
+        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+          <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+            <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+          </div>
+        </owl-carousel>
+        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+          <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+            <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+          </div>
+        </owl-carousel>
+        <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+          <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+            <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+          </div>
+        </owl-carousel>
       </div>
-    </owl-carousel>
-    <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
-      <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
-        <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
-      </div>
-    </owl-carousel>
-    <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
-      <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
-        <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
-      </div>
-    </owl-carousel>
-    <!-- <div class="owl-carousel" data-items="5" data-auto-play="true" data-pagination="false" data-single-item="false">
-    <div class="c1-item">
     </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-2.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Repetition</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-3.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Pleasure</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-4.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Molestiae</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-5.png" alt=""  class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Extremely</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-6.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Annoying</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-2.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Doloribus</a></h5>
-    </div>
-    <div class="c1-item">
-    <a href="#"><img src="./../../assets/img/clients/c1-3.png" alt="" class="img-responsive" /></a>
-    <div class="img-hover"></div>
-    <h5><a href="#">Repellat</a></h5>
-    </div>
-    </div> -->
-  </div>
 </div>

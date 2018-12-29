@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { News } from './../../news';
 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { NewsService } from './../../services/news.service';
 
@@ -10,43 +10,43 @@ import { NewsService } from './../../services/news.service';
   templateUrl: './news-index.component.html',
   styleUrls: ['./news-index.component.css']
 })
-export class NewsIndexComponent{
+export class NewsIndexComponent {
   public adminValue: string;
   constructor(
     private router: Router,
     private newsService: NewsService
-  ){
+  ) {
     this.adminValue = sessionStorage.getItem('admin');
-    if(this.adminValue !== 'true'){
+    if (this.adminValue !== 'true') {
       this.router.navigate(['/designer'], {queryParams: {login: 0}});
     }
     this.index();
   }
 
 
-  news: Array<object>;
+  news: Array<News>;
   returnedRes = true;
   returnedMess;
 
-    index(){
+    index() {
       this.newsService
         .indexNews()
         .subscribe(response => {
           this.news = response;
-        })
+        });
     }
 
-    delete(id){
+    delete(id) {
       this.newsService
         .deleteNews({id: id})
         .subscribe(response => {
-          if(response.success){
+          if (response.success) {
             window.location.reload();
           } else {
             this.returnedRes = response.success;
             this.returnedMess = response.response;
           }
-        })
+        });
     }
 
 }

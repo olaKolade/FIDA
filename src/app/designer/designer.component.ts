@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './../user';
-
-import { Location } from '@angular/common';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { UserService } from './../services/user.service';
 
@@ -13,7 +11,7 @@ import { UserService } from './../services/user.service';
   styleUrls: ['./designer.component.css']
 })
 export class DesignerComponent implements OnInit {
-  page_title: string = 'DESIGNERS';
+  page_title = 'DESIGNERS';
 
   public data: number;
   public loggedInValue: string;
@@ -24,36 +22,38 @@ export class DesignerComponent implements OnInit {
   public adminValue: string;
   public admin: boolean;
 
-  user= new User;
+  user = new User;
+  public id;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-  ){
+  ) {
 
+    this.id = +this.route.snapshot.paramMap.get('id');
     this.loggedInValue = sessionStorage.getItem('loggedInValue');
-    if(this.loggedInValue === 'true'){
+    if (this.loggedInValue === 'true') {
       this.loggedIn = true;
     } else {
       this.router.navigate(['/designer'], {queryParams: {login: 0}});
     }
 
     this.adminValue = sessionStorage.getItem('admin');
-    if(this.adminValue === 'true'){
+    if (this.adminValue === 'true') {
       this.admin = true;
     }
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.showUser();
   }
 
-    showUser(){
-      const id = +this.route.snapshot.paramMap.get('id');
+    showUser() {
       this.userService
-        .showUser({id: id})
+        .showUser({id: this.id})
         .subscribe(response => {
-          if(response.success){
+          if (response.success) {
             this.user = response['user'];
           } else {
             console.log(response.response);
@@ -66,7 +66,7 @@ export class DesignerComponent implements OnInit {
             _this.urls  = _this.user.gallery.split("|");
             }
           */
-        })
+        });
 
     }
 

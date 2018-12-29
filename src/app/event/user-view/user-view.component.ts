@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from './../../event';
-
-import { Location } from '@angular/common';
-import { ActivatedRoute, Router, Params } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from './../../services/event.service';
 
 @Component({
@@ -11,26 +8,25 @@ import { EventService } from './../../services/event.service';
   templateUrl: './user-view.component.html',
   styleUrls: ['./user-view.component.css']
 })
-export class UserEventComponent implements OnInit{
-  event= new Event;
+export class UserEventComponent implements OnInit {
+  event = new Event;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private eventService: EventService
-  ){
-  }
+  ) {}
 
 
-  ngOnInit(){
+  ngOnInit() {
     this.showEvent();
   }
 
-    showEvent(){
+    showEvent() {
       const id = +this.route.snapshot.paramMap.get('id');
       this.eventService
         .showEvent({id: id})
         .subscribe(response => {
-          this.event = response;
-        })
+          this.event = response.event;
+        });
     }
 }

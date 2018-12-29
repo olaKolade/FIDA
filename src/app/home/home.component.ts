@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlModule } from 'ngx-owl-carousel';
-
 import { Subscriber } from './../subscriber';
 import { News } from './../news';
 import { NewsService } from './../services/news.service';
 import { Event } from './../event';
 import { EventService } from './../services/event.service';
-import { User } from './../user';
 import { UserService } from './../services/user.service';
 
 @Component({
@@ -16,17 +13,15 @@ import { UserService } from './../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  myCarouselImages =["./../../assets/img/clients/c1-1.png", "./../../assets/img/clients/c1-2.png",
-                     "./../../assets/img/clients/c1-3.png", "./../../assets/img/clients/c1-4.png",
-                     "./../../assets/img/clients/c1-5.png", "./../../assets/img/clients/c1-6.png",
-                     "./../../assets/img/clients/c1-3.png"];
-  myCarouselOptions = {items: 7, dots: true, nav: true};
+  myCarouselImages = ['./../../assets/img/clients/c1-1.png', './../../assets/img/clients/c1-2.png',
+                     './../../assets/img/clients/c1-3.png', './../../assets/img/clients/c1-4.png'];
+  myCarouselOptions = {items: 4, dots: true, nav: true};
 
   _sub = new Subscriber();
-  news: Array<object>;
-  events: Array<object>;
+  news: Array<News>;
+  events: Array<Event>;
 
-  constructor(private newsService: NewsService,private eventService: EventService,private userService: UserService) {
+  constructor(private newsService: NewsService, private eventService: EventService, private userService: UserService) {
 
     this.indexNews();
     this.indexEvent();
@@ -49,14 +44,18 @@ export class HomeComponent implements OnInit {
   }
 
   onSubscribe() {
-    this.userService.subs({
-      email: this._sub.email,
-      name: this._sub.name,
-      title: this._sub.title,
-      company: this._sub.company
-    }).subscribe(response => {
-        console.log(response);
-        alert('thank you for subscribing');
-      });
+    if (!this._sub.email) {
+      alert('Email Field required');
+    } else {
+      this.userService.subs({
+        email: this._sub.email,
+        name: this._sub.name,
+        title: this._sub.title,
+        company: this._sub.company
+      }).subscribe(response => {
+          console.log(response);
+          alert('thank you for subscribing');
+        });
+    }
   }
 }

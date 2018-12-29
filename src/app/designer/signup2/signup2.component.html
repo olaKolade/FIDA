@@ -11,7 +11,7 @@
          <h3 class="text-primary">Upload a Profile Picture <small> max size: 2MB</small></h3>
         <form  #signupForm="ngForm" (ngSubmit)="onSubmit()">
           <span style="color: #0D7C15;"><label class="btn btn-primary upload-btn" style="background: #0D7C15;margin-right: 10px;">
-              Upload Picture <input type="file" name="file" hidden (change)="onFileSelected($event)">
+              Upload Picture <input type="file" name="file" accept="image/*" hidden (change)="onFileSelected($event)">
           </label>
           </span>
           <button type="button" class="btn btn-secondary" (click)="onUpload()">Upload</button>

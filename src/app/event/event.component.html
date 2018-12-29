@@ -1,25 +1,27 @@
-<div class="container">
+<div class="container-fluid">
   <h3 class="left">{{page_title}}</h3>
-  <div class="container">
-    <app-calend></app-calend>
-    <div class="row">
-      <div *ngFor="let event of events" class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body">
-            <ul class="products"  style="list-style: none;padding:0;">
-              <li class="crop">
-                <img src="./../../uploads/event/{{event.image}}" class="img-responsive" />
-              </li>
-            </ul>
-            <div class="clearfix"></div>
-            <h4 class="card-text">{{event.title}}</h4>
-            <p class="card-text">{{event.body}}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a routerLink="/userevent/{{event.id}}" class="btn btn-sm btn-outline-secondary">View</a>
-              </div>
-              <small class="text-muted">{{event.createdAt}}</small>
+  <div class="container-fluid" style="background-color:#dddddd; padding-top:20px;">
+    <div class="col-md-10 offset-md-1 grayBg">
+      <app-calend></app-calend>
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px;">
+    <div *ngFor="let event of events" class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <ul class="products"  style="list-style: none;padding:0;">
+            <li class="crop">
+              <img src="./../../uploads/event/{{event.image}}" class="img-responsive" />
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+          <h4 class="card-text">{{event.title}}</h4>
+          <p class="card-text">{{event.body}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a routerLink="/userevent/{{event.id}}" class="btn btn-sm btn-outline-secondary">View</a>
             </div>
+            <small class="text-muted">{{event.createdAt}}</small>
           </div>
         </div>
       </div>

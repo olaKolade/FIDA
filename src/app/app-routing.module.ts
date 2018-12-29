@@ -19,6 +19,7 @@ import { Signup3Component } from './designer/signup3/signup3.component';
 import { LoginComponent } from './designer/login/login.component';
 import { UserDComponent } from './designer/user-d/user-d.component';
 import { ResetComponent } from './designer/reset/reset.component';
+import { PassComponent } from './designer/reset/pass/pass.component';
 import { AboutComponent } from './about/about.component';
 
 import { IndexComponent } from './admin/index/index.component';
@@ -29,6 +30,7 @@ import { NewsIndexComponent } from './admin/news-index/news-index.component';
 import { ViewNewsComponent } from './admin/view-news/view-news.component';
 import { AddNewsComponent } from './admin/add-news/add-news.component';
 import { ViewEventComponent } from './admin/view-event/view-event.component';
+import { LoginAComponent } from './admin/login-a/login-a.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,7 @@ const routes: Routes = [
   {path: 'designer/login', component: LoginComponent },
   {path: 'designer/signup', component: SignupComponent },
   {path: 'designer/reset', component: ResetComponent },
+  {path: 'designer/reset_pass', component: PassComponent },
   {path: 'designer/:id', component: DesignerComponent },
   {path: 'designer/edit/:id', component: EditComponent },
   {path: 'designer/view/:id', component: UserDComponent },
@@ -55,6 +58,7 @@ const routes: Routes = [
   {path: 'designer/signup-3/:id', component: Signup3Component },
 
   {path: 'admin/index', component: IndexComponent },
+  {path: 'admin/login', component: LoginAComponent },
   {path: 'admin/calendar', component: CalendAComponent },
   {path: 'admin/newsIndex', component: NewsIndexComponent },
   {path: 'admin/addNews', component: AddNewsComponent },

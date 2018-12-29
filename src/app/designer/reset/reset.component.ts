@@ -25,6 +25,7 @@ export class ResetComponent {
     route: string;
 
     onSubmit() {
+      alert('Please wait while we verify your email');
       this.submitted = true;
       this.get();
     }
@@ -37,7 +38,8 @@ export class ResetComponent {
           if (response.success) {
             console.log(response);
             this.returnedRes = response.success;
-            this.returnedMess = 'Verification Email sent to {{this.user.email}}. Please, click the link sent to you.';
+            this.returnedMess = `Verification Email sent to {{this.user.email}}.
+            Please, click the link sent to you. Be sure to check your spam`;
           } else {
             console.log(response);
             this.returnedRes = response.success;

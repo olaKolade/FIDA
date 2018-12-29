@@ -6404,8 +6404,9 @@ body.boxed.img-5 {
 }
 /* Quote two */
 .quote-two{
-	background:url("../../img/raster.png"),url("../../img/backgrounds/3.jpg") center center;
-	background-attachment:fixed;
+	background:url("../../img/backgrounds/3.jpg") center;
+	background-attachment:scroll;
+	/* fixed */
 }
 .quote-two .quote-two-content{
 	text-align:center;
@@ -7049,7 +7050,7 @@ body.boxed.img-5 {
 }
 /* Body background image for some pages */
 body.bg-img{
-	background:url("../../img/raster.png"),url("../../img/backgrounds/1.jpg");
+	background:url("../../img/backgrounds/1.jpg");
 	background-size:cover;
 	background-attachment:fixed;
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Event } from './../../event';
 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { EventService } from './../../services/event.service';
 
@@ -10,59 +10,58 @@ import { EventService } from './../../services/event.service';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.css']
 })
-export class EventAComponent{
+export class EventAComponent {
 
   public adminValue: string;
   constructor(
     private router: Router,
     private eventService: EventService
-  ){
+  ) {
     this.adminValue = sessionStorage.getItem('admin');
-    if(this.adminValue !== 'true'){
+    if (this.adminValue !== 'true') {
       this.router.navigate(['/designer'], {queryParams: {login: 0}});
     }
     this.index();
   }
 
-  route:string;
-  error= false;
+  route: string;
+  error = false;
   errMes: string;
   model = new Event();
-  events: Array<object>;
+  events: Array<Event>;
 
-    index(){
+    index() {
       this.eventService
         .indexEvent()
         .subscribe(response => {
           this.events = response;
-        })
+        });
     }
 
-    delete(id){
+    delete(id) {
       this.eventService
         .deleteEvent({id: id})
         .subscribe(response => {
-          if(response.success){
+          if (response.success) {
             window.location.reload();
-            this
           } else {
             this.error = true;
             this.errMes = response.response;
           }
-        })
+        });
     }
 
     onSubmit() {
       this.add();
     }
 
-    add(){
+    add() {
       this.eventService
         .addEvent(this.model)
         .subscribe(response => {
           this.route = '/admin/event/';
-          {response.success ? window.location.reload() : console.log("Event not added" )};
-        })
+          {response.success ? window.location.reload() : console.log('Event not added')};
+        });
 
     }
 }

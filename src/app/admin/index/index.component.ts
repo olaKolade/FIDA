@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from './../../user';
+import { Component } from '@angular/core';
 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from './../../services/user.service';
 
@@ -10,48 +9,44 @@ import { UserService } from './../../services/user.service';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent{
-
+export class IndexComponent {
+  users: Array<object>;
   public adminValue: string;
   public admin: boolean;
   constructor(
     private router: Router,
     private userService: UserService
-  ){
+  ) {
     this.adminValue = sessionStorage.getItem('admin');
-    if(this.adminValue === 'true'){
+    if (this.adminValue === 'true') {
       this.admin = true;
-      console.log("yes admin");
+      console.log('yes admin');
     } else {
       this.router.navigate(['/designer'], {queryParams: {login: 0}});
     }
     this.index();
-    //this.reload();
   }
 
-  reload(){
+  reload() {
     window.location.reload();
   }
 
+  index() {
+    this.userService
+      .indexUsers()
+      .subscribe(response => {
+        this.users = response;
+      });
+  }
 
-  users: Array<object>;
-
-    index(){
-      this.userService
-        .indexUsers()
-        .subscribe(response => {
-          this.users = response;
-        })
-    }
-
-    delete(id){
-      this.userService
-        .deleteUser({id: id})
-        .subscribe(response => {
-          if(response.success){
-              window.location.reload();
-          }
-        })
-    }
+  delete(id) {
+    this.userService
+      .deleteUser({id: id})
+      .subscribe(response => {
+        if (response.success) {
+            window.location.reload();
+        }
+      });
+  }
 
 }

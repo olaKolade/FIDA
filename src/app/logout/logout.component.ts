@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -23,7 +23,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  redirectTo(uri: string){
-    this.router.navigateByUrl('/about', {skipLocationChange: true}).then(()=>this.router.navigate([uri]));
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/about', {skipLocationChange: true}).then(() => this.router.navigate([uri]));
 }
 }

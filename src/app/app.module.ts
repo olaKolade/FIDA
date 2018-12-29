@@ -15,8 +15,7 @@ import { DemoModule as DefaultDemoModule } from './demo-modules/kitchen-sink/mod
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { OwlModule } from 'ngx-owl-carousel';
-
-import { UserService } from './services/user.service';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 import { AppComponent } from './app.component';
@@ -50,6 +49,7 @@ import { UserDComponent } from './designer/user-d/user-d.component';
 import { ViewEventComponent } from './admin/view-event/view-event.component';
 import { ResetComponent } from './designer/reset/reset.component';
 import { PassComponent } from './designer/reset/pass/pass.component';
+import { LoginAComponent } from './admin/login-a/login-a.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +83,8 @@ import { PassComponent } from './designer/reset/pass/pass.component';
     UserDComponent,
     ViewEventComponent,
     ResetComponent,
-    PassComponent
+    PassComponent,
+    LoginAComponent
   ],
   imports: [
     BrowserModule,
@@ -96,6 +97,7 @@ import { PassComponent } from './designer/reset/pass/pass.component';
     DefaultDemoModule,
     NgbModalModule,
     OwlModule,
+    NgxPayPalModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,

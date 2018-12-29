@@ -5,7 +5,13 @@
       <div class="row">
         <div class="col-md-3">
           <div class="mb-4 shadow-sm">
-            <ul class="horizontal-list"  style="list-style: none;padding:0;"><li class="crop"> <a href="/uploads/{{user.profile_pic}}" target="_blank"> <img src="/uploads/{{user.profile_pic}}" class="img img-responsive" alt="Profile Picture"/></a> </li></ul>
+            <ul class="horizontal-list"  style="list-style: none;padding:0;">
+              <li class="crop"> 
+                <a href="/uploads/{{user.id}}/{{user.profile_pic}}" target="_blank"> 
+                  <img src="/uploads/{{user.id}}/{{user.profile_pic}}" class="img img-responsive" alt="Profile Picture"/>
+                </a> 
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col-md-12">
@@ -20,8 +26,8 @@
         </div>
         <div class="col-md-12">
           <p class="text-info">GALLERY:</p>
-          <a *ngFor="let url of urls"  target="_blank" style="display:inline;" href="/uploads/{{url}}">
-            <ul class="horizontal-list"  style="list-style: none;padding:0;display:inline;"><li class=""> <img  src="/uploads/{{url}}" class="img img-responsive" alt="Gallery Picture"/> </li></ul>
+          <a *ngFor="let url of urls"  target="_blank" style="display:inline;" href="/uploads/{{id}}/{{url}}">
+            <ul class="horizontal-list"  style="list-style: none;padding:0;display:inline;"><li class=""> <img  src="/uploads/{{id}}/{{url}}" class="img img-responsive" alt="Gallery Picture"/> </li></ul>
           </a>
         </div>
       </div>

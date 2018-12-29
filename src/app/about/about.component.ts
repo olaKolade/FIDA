@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent  {
-  page_title:string = 'Our Mission';
+  page_title = 'Our Mission';
   constructor() {}
 
 }

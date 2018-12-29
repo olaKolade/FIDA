@@ -6,9 +6,9 @@
 
         <div class="card-body">
           <h4 class="card-text">Sponsor</h4>
-          <p>Sponsorship Letters</p>
-          <p>Sponsorship Levels</p>
-          <p>Sponsorship Agreements</p>
+          <p><a href="">Sponsorship Letters</a></p>
+          <p><a href="">Sponsorship Levels</a></p>
+          <p><a href="">Sponsorship Agreements</a></p>
         </div>
       </div>
     </div>
@@ -30,12 +30,23 @@
   <!-- Client One Starts -->
   <br />
 
-  <div class="client-one">
-
-    <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
-      <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
-        <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
-       </div>
-    </owl-carousel>
+  <div class="col-md-10 offset-md-1">
+    <div class="client-one">
+      <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+        <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+          <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+         </div>
+      </owl-carousel>
+      <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+        <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+          <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+         </div>
+      </owl-carousel>
+      <owl-carousel [options]="myCarouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'sliding']" >
+        <div class="cl-item" *ngFor="let image of myCarouselImages;let i = index">
+          <a href="#"><img src="{{image}}" alt=""  class="img-responsive" /></a>
+         </div>
+      </owl-carousel>
+    </div>
   </div>
 </div>

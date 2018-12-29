@@ -14,7 +14,7 @@
             <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180">
         </div>
           <span style="color: #0D7C15;"><label class="btn btn-primary upload-btn" style="background: #0D7C15;margin-right: 10px;">
-              Upload file<input type="file" name="image[]" hidden multiple (change)="onFileSelected($event)">
+              Upload file<input type="file" name="image[]" accept="image/*" hidden multiple (change)="onFileSelected($event)">
           </label>
           </span>
           <button type="button" class="btn btn-secondary" (click)="onUpload()">Upload</button>
